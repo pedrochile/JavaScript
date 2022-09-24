@@ -1,80 +1,142 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito de compras</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h4>Carrito de compras</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Acción</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody id="items"></tbody>
-        <tfoot>
-          <tr id="footer">
-            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-          </tr>
-        </tfoot>
-      </table>
-      <h4>Cards</h4>
-      <div class="row" id="cards"></div>
-    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <template id="template-footer">
-        <th scope="row" colspan="2">Total productos</th>
-        <td>10</td>
-        <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                vaciar todo
-            </button>
-        </td>
-        <td class="font-weight-bold">$ <span>5000</span></td>
-    </template>
-    
-    <template id="template-carrito">
-      <tr>
-        <th scope="row">id</th>
-        <td>Café</td>
-        <td>1</td>
-        <td>
-            <button class="btn btn-info btn-sm">
-                +
-            </button>
-            <button class="btn btn-danger btn-sm">
-                -
-            </button>
-        </td>
-        <td>$ <span>500</span></td>
-      </tr>
-    </template>
+    <title>Recursos</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
 
-    <template id="template-card">
-      <div class="col-12 mb-2">
-        <div class="card">
-          <div class="card-body">
-            <h5>Titulo</h5>
-            <p>precio</p>
-            <button class="btn btn-dark">Comprar</button>
+  
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Recursos</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link text-body"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="open" href="#">Carro<i class="fa-solid fa-cart-shopping"></i> <span id="counter"></span></a></button>
+              </li>
+            </ul> 
           </div>
         </div>
-      </div>
-    </template>
+      </nav>
+    <div>
+        <h1>Registro de productos</h1>
+    </div>
 
+
+
+<ul id="listaDeStock">
+  <template>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</template>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Modal -->   
+
+
+
+
+ <!-- Button trigger modal -->
+
+
+<!--
+ <main id="product-container">
+ Modal 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button>
+      </div>
+      <div class="modal-body" id="cart-container">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <div id="cart-container"></div>
+ </main>
+
+
+-->
+
+
+
+ <!--
+ <main id="product-container">
+
+
+      
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+    </main> -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+    crossorigin="anonymous"></script>
     <script src="app.js"></script>
-  </body>
+    <script src="carrito.js"></script>
+
+</body>
 </html>

@@ -34,7 +34,7 @@ class Productos {
       const productContainer = document.getElementById("contenedor-productos");
       //console.log(productContainer)
       productos.forEach( producto => {
-          const card = document.createElement('card');
+          const card = document.createElement('items');
           card.innerHTML += `<div class="card border-danger mb-3" style="width:12rem;">
                               <img src="${producto.img}" class="card-img-top" alt="...">
                                 <div class="card-body">

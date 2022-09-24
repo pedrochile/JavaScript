@@ -8,12 +8,12 @@ const cart = (productoId) => {
     stockProductos.push(producto);
 
     let div = document.createElement(`div`);
-    div.classList.add(`producInCart`);
-    div.innerHTML = `<p>${producto.nombre}</p>
-                     <p>Precio: ${producto.marca}</p>
-                     <p>Cantidad: ${producto.cantidad}</p>
-                     <p id="${producto.id}"</p>CANTIDAD</p>
-                     <button class="btn btn-danger btn-sm" id="delete${producto.id}">Eliminar</button>`
+    div.classList.add(`table`);
+    div.innerHTML = `<tr><p>${producto.nombre}</p></tr>
+                     <tr><p>Precio: ${producto.marca}</p></tr>
+                     <tr><p>Cantidad: ${producto.cantidad}</p></tr>
+                     <tr><p id="${producto.id}"</p>CANTIDAD</p></tr>
+                     <tr><button class="btn btn-danger btn-sm" id="delete${producto.id}">Eliminar</button></tr>`
 
     cartContainter.appendChild(div);
 
