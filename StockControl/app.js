@@ -105,7 +105,7 @@ stockProductos.push(
   prod10
 );
 
-const TipoMoneda = `$`;
+
 const DItems = document.querySelector(`#items`);
 const DCarrito = documen.querySelector(`#carrito`);
 const DTotal = document.querySelector(`#total`);
@@ -173,4 +173,4 @@ function mostrarCarrito() {
 }
 
 MostrarProductos();
-.
+
