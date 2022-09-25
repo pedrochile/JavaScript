@@ -170,4 +170,3 @@ DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 // Inicio
 renderizarProductos();
 renderizarCarrito();
-

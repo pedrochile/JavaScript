@@ -17,24 +17,40 @@
   </head>
   <body>
 
-
+    <div class="row">
+      
+      <!-- Elementos generados a partir del JSON -->
+      <main id="items" class="col-sm-8 row"></main>
+      <!-- Carrito -->
+      <aside class="col-sm-4">
+          <h2>Carrito</h2>
+          <!-- Elementos del carrito -->
+          <ul id="carrito" class="list-group"></ul>
+          <hr>
+          <!-- Precio total -->
+          <p class="text-right">Total: <span id="total"></span>$</p>
+          <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+      </aside>
+  </div>
     
 
     
     <div class="container">
         <div class="container" id="contenedor-productos">
+          
              
             </div>
         
           
             <div class="modal-body" id="modalcarrito">
+              
               <div class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title">Modal title</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">$</span>
                       </button>
                     </div>
                     <div class="modal-body">
@@ -51,20 +67,11 @@
 
 
 
-            <form class="form-inline">
-              <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Usuario</label>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected>Choose...</option>
-                <option value="1">maria </option>
-                <option value="2">jose</option>
-                <option value="3">ignacia</option>
-              </select>
-
+     
 
 
 
               
-            
 
 
 
@@ -73,36 +80,7 @@
 
 
 
-        <p>CARRO!!!</p>
-        <table class="table" id="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+  
 
 
 
