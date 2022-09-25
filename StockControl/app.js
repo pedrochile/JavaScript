@@ -1,4 +1,3 @@
-
 class Productos {
   constructor(id, nombre, marca, descripcion, img, precio) {
     this.id = id;
@@ -112,8 +111,7 @@ const DItems = document.querySelector("#items");
 const DCarrito = document.querySelector("#carrito");
 const DTotal = document.querySelector("#total");
 const DVaciar = document.querySelector("#boton-vaciar");
-
-
+const LocalS = window.localStorage;
 
 function MostrarProductos() {
   stockProductos.forEach((productodelarray) => {
@@ -163,13 +161,14 @@ function MostrarProductos() {
 
 function agregarProductoAlCarro(evento) {
   carrito.push(evento.target.getAtribute("marcador"));
-
+  console.log("funcionando");
   mostrarCarrito();
+  guardarLocalS();
 }
 
 function mostrarCarrito() {
-  DCarrito.textContent = ''; // elimino todo del html, para poder cargar lo que sigue
-  const QuitarDuplicadosCarrito = [...new Set(stockProductos)]; //creo un array copiado del stockproductos para no alterarlos usando new set
+  DCarrito.textContent = ""; // elimino todo del html, para poder cargar lo que sigue
+  const QuitarDuplicadosCarrito = [...new Set(carrito)]; //creo un array copiado del stockproductos para no alterarlos usando new set
   QuitarDuplicadosCarrito.forEach((item) => {
     //en cada item del array, aplico filtro para buscar alguna igualdad entre lo que entro y lo que tengo
     const miItem = stockProductos.filter((ItemStockProductos) => {
@@ -190,7 +189,7 @@ function mostrarCarrito() {
     miBoton.textContent = "Eliminar";
     miBoton.style.marginLeft = "1rem";
     miBoton.dataset.item = item;
-    miBoton.addEventListener("click", borrarItemCarrito);
+    miBoton.addEventListener("click", borrarDelCarrito);
 
     NodoDIV.appendChild(miBoton);
     DCarrito.appendChild(NodoDIV);
@@ -199,19 +198,20 @@ function mostrarCarrito() {
   DTotal.textContent = calcularTotal();
 }
 
-function borrarItemCarrito(evento) {
+function borrarDelCarrito(evento) {
   const id = evento.target.dataset.item;
   carrito = carrito.filter((carritoId) => {
     return carritoId !== id;
   });
   mostrarCarrito();
+  guardarLocalS();
 }
 
 function calcularTotal() {
   return carrito
     .reduce((total, item) => {
-      const miItem = baseDeDatos.filter((itemBaseDatos) => {
-        return itemBaseDatos.id === parseInt(item);
+      const miItem = stockProductos.filter((ItemStock) => {
+        return ItemStock.id === parseInt(item);
       });
       return total + miItem[0].precio;
     }, 0)
@@ -225,6 +225,5 @@ function vaciarCarrito() {
 }
 DVaciar.addEventListener("click", vaciarCarrito);
 
-MostrarProductos()
-mostrarCarrito()
-
+MostrarProductos();
+mostrarCarrito();
