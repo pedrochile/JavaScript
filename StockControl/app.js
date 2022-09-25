@@ -109,7 +109,7 @@ stockProductos.push(
 let carrito = [];
 
 const DItems = document.querySelector("#items");
-const DCarrito = documen.querySelector("#carrito");
+const DCarrito = document.querySelector("#carrito");
 const DTotal = document.querySelector("#total");
 const DVaciar = document.querySelector("#boton-vaciar");
 
@@ -183,7 +183,7 @@ function mostrarCarrito() {
 
     const NodoDIV = document.createElement(`li`); // creo elemento que va en el carro li , y se carga ina información en el carrito separado por x -
     NodoDIV.classList.add(`list-group-item`, `text-right`, `mx-2`);
-    NodoDIV.textContent = `${numeroUnidades}x${miItem[0].nombre} - ${miItem[0].precio} $`;
+    NodoDIV.textContent = `${numeroUnidades}x${miItem[0].nombre} - ${miItem[0].precio}`;
 
     const miBoton = document.createElement("button");
     miBoton.classList.add("btn", "btn-danger", "mx-5");

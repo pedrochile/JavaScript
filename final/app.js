@@ -22,7 +22,7 @@ class Productos {
   const prod9 = new Productos ("10", "Papel Toalla","Ovella","Papel Absorvente",`img/papelToalla.jpg`,78)
   const prod10 = new Productos ("11", "Trapero Doble","Virutex","trapero Doble Ojal",`img/trapero.jpg`,26)
 
-  
+ 
   
   stockProductos.push (prod1,prod2, prod3, prod4, prod5, prod6,prod7,prod8,prod9,prod10)
   
@@ -50,9 +50,20 @@ class Productos {
           button.addEventListener('click', () =>{
               cart(`${producto.id}`);
               alert(`Agregaste ${producto.nombre}`)
+              console.log(`button${producto.id}`)
+         
+             
+
+              
+
+
+
           })
       })
   };
   
+
+
+
 
  mostrarProductos(stockProductos)

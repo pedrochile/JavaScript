@@ -2,9 +2,7 @@
 const cart = (productoId) => {
   const cartContainter = document.getElementById(`carrito`);
   const MostrarProductosENCarrito = () => {
-    let producto = stockProductos.find(
-      (producto) => producto.id === productoId
-    );
+    let producto = stockProductos.find((producto) => producto.id === productoId);
     stockProductos.push(producto);
 
     let div = document.createElement(`div`);
@@ -12,7 +10,7 @@ const cart = (productoId) => {
     div.innerHTML = `<tr><p>${producto.nombre}</p></tr>
                      <tr><p>Precio: ${producto.marca}</p></tr>
                      <tr><p>Cantidad: ${producto.cantidad}</p></tr>
-                     <tr><p id="${producto.id}"</p>CANTIDAD</p></tr>
+                     <tr><p id="${producto.id}"</p>id</p></tr>
                      <tr><button class="btn btn-danger btn-sm" id="delete${producto.id}">Eliminar</button></tr>`
 
     cartContainter.appendChild(div);
@@ -28,5 +26,5 @@ const cart = (productoId) => {
 
 function deleteProducto(e) {
   let btnClicked = e.target;
-  btnClicked.parenElement.remove();
+  btnClicked.parenElement.remove(e);
 }
