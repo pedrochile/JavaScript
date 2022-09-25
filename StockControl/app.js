@@ -105,19 +105,20 @@ stockProductos.push(
   prod10
 );
 
+let carrito=[]
 
-const DItems = document.querySelector(`#items`);
-const DCarrito = documen.querySelector(`#carrito`);
-const DTotal = document.querySelector(`#total`);
-const DVaciar = document.querySelector(`#boton-vaciar`);
+const DItems = document.querySelector("#items");
+const DCarrito = documen.querySelector("#carrito");
+const DTotal = document.querySelector("#total");
+const DVaciar = document.querySelector("#boton-vaciar");
 
 function MostrarProductos() {
   stockProductos.forEach((productodelarray) => {
-    const NodoDIV = document.createElement(`div`);
-    NodoDIV.classList.add(`card`, `col-sm-4`);
+    const NodoDIV = document.createElement("div");
+    NodoDIV.classList.add("card", "col-sm-4");
 
-    const NodoCuerpocard = document.createElement(`div`);
-    NodoCuerpocard.classList.add(`card-body`);
+    const NodoCuerpocard = document.createElement("div");
+    NodoCuerpocard.classList.add("card-body");
 
     const NodoIMG = document.createElement(`img`);
     NodoIMG.classList.add(`img-fluid`);
@@ -131,12 +132,12 @@ function MostrarProductos() {
     NodoPrecio.classList.add(`card-text`);
     NodoPrecio.textContent = `$ ${productodelarray.precio}`;
 
-    const NodoMarca = document.createElement(`h4`);
-    NodoMarca.classList.add(`card-title`);
+    const NodoMarca = document.createElement(`h6`);
+    NodoMarca.classList.add(`card-text`);
     NodoMarca.textContent = productodelarray.marca;
 
-    const NodoDescripcion = document.createElement(`h4`);
-    NodoDescripcion.classList.add(`card-title`);
+    const NodoDescripcion = document.createElement(`h6`);
+    NodoDescripcion.classList.add(`card-text`);
     NodoDescripcion.textContent = productodelarray.descripcion;
 
     const NodoBoton = document.createElement(`button`);
@@ -156,8 +157,13 @@ function MostrarProductos() {
   });
 }
 
+
+MostrarProductos()
+
+
+
 function agregarProductoAlCarro(evento) {
-  stockProductos.push(evento.target.getAtribute(`marcador`));
+  carrito.push(evento.target.getAtribute(`marcador`));
 
   mostrarCarrito();
 }
@@ -169,8 +175,9 @@ function mostrarCarrito() {
     const miItem = stockProductos.filter((ItemStockProductos) => {
       return ItemStockProductos.id === parseInt(item);
     });
-  });
+    const numeroUnidades = stockProductos.
+  }
 }
 
-MostrarProductos();
+
 
