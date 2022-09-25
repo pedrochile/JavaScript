@@ -1,3 +1,4 @@
+
 class Productos {
   constructor(id, nombre, marca, descripcion, img, precio) {
     this.id = id;
@@ -112,7 +113,7 @@ const DCarrito = documen.querySelector("#carrito");
 const DTotal = document.querySelector("#total");
 const DVaciar = document.querySelector("#boton-vaciar");
 
-mostrarCarrito();
+
 
 function MostrarProductos() {
   stockProductos.forEach((productodelarray) => {
@@ -161,13 +162,13 @@ function MostrarProductos() {
 }
 
 function agregarProductoAlCarro(evento) {
-  carrito.push(evento.target.getAtribute(`marcador`));
+  carrito.push(evento.target.getAtribute("marcador"));
 
   mostrarCarrito();
 }
 
 function mostrarCarrito() {
-  DCarrito.textContent = ``; // elimino todo del html, para poder cargar lo que sigue
+  DCarrito.textContent = ''; // elimino todo del html, para poder cargar lo que sigue
   const QuitarDuplicadosCarrito = [...new Set(stockProductos)]; //creo un array copiado del stockproductos para no alterarlos usando new set
   QuitarDuplicadosCarrito.forEach((item) => {
     //en cada item del array, aplico filtro para buscar alguna igualdad entre lo que entro y lo que tengo
@@ -175,17 +176,18 @@ function mostrarCarrito() {
       return ItemStockProductos.id === parseInt(item); //solo puede existir 1 id
     });
     const numeroUnidades = carrito.reduce((total, itemID) => {
+      // si coincide los ID, aumento, o lo mantengo
       //Me devuelve 1 valor con reduce
       return itemID === item ? (total += 1) : total;
     }, 0);
 
-    const NodoDIV = document.createElement(`li`); // creo elemento que va en el carro li
-    NodoDIV.classList.add(`list-group-item`, `text-right0`, `mx-2`);
+    const NodoDIV = document.createElement(`li`); // creo elemento que va en el carro li , y se carga ina información en el carrito separado por x -
+    NodoDIV.classList.add(`list-group-item`, `text-right`, `mx-2`);
     NodoDIV.textContent = `${numeroUnidades}x${miItem[0].nombre} - ${miItem[0].precio} $`;
 
     const miBoton = document.createElement("button");
     miBoton.classList.add("btn", "btn-danger", "mx-5");
-    miBoton.textContent = "X";
+    miBoton.textContent = "Eliminar";
     miBoton.style.marginLeft = "1rem";
     miBoton.dataset.item = item;
     miBoton.addEventListener("click", borrarItemCarrito);
@@ -219,6 +221,10 @@ function calcularTotal() {
 function vaciarCarrito() {
   carrito = [];
 
-  renderizarCarrito();
+  mostrarCarrito();
 }
 DVaciar.addEventListener("click", vaciarCarrito);
+
+MostrarProductos()
+mostrarCarrito()
+
