@@ -125,7 +125,7 @@ function MostrarProductos() {
 
     const NodoIMG = document.createElement("img");
     NodoIMG.classList.add("img-fluid");
-    NodoIMG.setAttribute("img", productodelarray.img);
+    NodoIMG.setAttribute("src", productodelarray.img);
 
     const NodoTitulo = document.createElement("h5");
     NodoTitulo.classList.add("card-title");
@@ -167,17 +167,19 @@ function agregarProductoAlCarro(evento) {
 }
 
 function mostrarCarrito() {
-  DCarrito.textContent = ``  // elimino todo del html, para poder cargar lo que sigue
+  DCarrito.textContent = ``; // elimino todo del html, para poder cargar lo que sigue
   const QuitarDuplicadosCarrito = [...new Set(stockProductos)]; //creo un array copiado del stockproductos para no alterarlos usando new set
-  QuitarDuplicadosCarrito.forEach((item) => {     //busco en cada item 
+  QuitarDuplicadosCarrito.forEach((item) => {
+    //en cada item del array, aplico filtro para buscar alguna igualdad entre lo que entro y lo que tengo
     const miItem = stockProductos.filter((ItemStockProductos) => {
-      return ItemStockProductos.id === parseInt(item);
+      return ItemStockProductos.id === parseInt(item); //solo puede existir 1 id
     });
     const numeroUnidades = carrito.reduce((total, itemID) => {
+      //Me devuelve 1 valor con reduce
       return itemID === item ? (total += 1) : total;
     }, 0);
 
-    const NodoDIV = document.createElement(`li`);
+    const NodoDIV = document.createElement(`li`); // creo elemento que va en el carro li
     NodoDIV.classList.add(`list-group-item`, `text-right0`, `mx-2`);
     NodoDIV.textContent = `${numeroUnidades}x${miItem[0].nombre} - ${miItem[0].precio} $`;
 
