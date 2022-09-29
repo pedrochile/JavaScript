@@ -8,7 +8,7 @@ class Productos {
       this.cantidad = cantidad
     }
   }
-  
+  const LocalS = window.localStorage;
   const stockProductos = [];
   
   const prod2 = new Productos ("2", "alcohol Litro","Difem","Alcohol de Litro",'img/alcoholLitro.jpg', 30)
@@ -32,6 +32,7 @@ class Productos {
 
   const mostrarProductos = (productos) =>   {
       const productContainer = document.getElementById("contenedor-productos");
+      console.log("dsadas")
       //console.log(productContainer)
       productos.forEach( producto => {
           const card = document.createElement('card');

@@ -163,7 +163,7 @@ function agregarProductoAlCarro(evento) {
   carrito.push(evento.target.getAtribute("marcador"));
   console.log("funcionando");
   mostrarCarrito();
-  guardarLocalS();
+  
 }
 
 function mostrarCarrito() {
@@ -256,9 +256,9 @@ function mostrarCarrito() {
   };
   
 
+  }
 
-
-
+/*
  mostrarProductos(stockProductos)
 
     DCarrito.appendChild(NodoDIV);
@@ -293,6 +293,6 @@ function vaciarCarrito() {
   mostrarCarrito();
 }
 DVaciar.addEventListener("click", vaciarCarrito);
-
+*/
 MostrarProductos();
 mostrarCarrito();
