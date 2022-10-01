@@ -46,24 +46,8 @@ const cart = (productoId) => {
     carroFuncional.forEach((item) => {
       console.log(item);
 
-      const MiItem = stockProductos.filter((ItemProductos) =>{
-        return ItemProductos.id===parseInt(item)
-
-      })
-
-      const Unidades = productosCarro.reduce((cantidad,id)=>{
-        return id===item ? cantidad+=1: cantidad},0);
-
-      
-
-
-
-
-
-
-
 /*     const buscar = productosCarro.filter((itemcarrito) => {
-        return itemcarrito === parseInt(item);
+        return itemcarrito === parseInst(item);
       }); */
       /*   const ItemUnidades = productosCarro.reduce((cantidad, productoId) => {
         return productoId === item ? (cantidad += 1) : cantidad;
