@@ -1,12 +1,14 @@
 const cartContainter = document.querySelector(`#listado`);
 
-const productosCarro = [];
-
-const cart = (productoId) => {
+let productosCarro = [];
+let CarroLocal =[]
+let cart = (productoId) => {
   
 
   const MostrarProductosENCarrito = () => {
-    //esto funciona
+
+    cartContainter.textContent=""
+ //esto funciona
     /* let productos = stockProductos.find((producto) => producto.id === productoId);
     productosCarro.push(productos);
  */
@@ -30,29 +32,47 @@ const cart = (productoId) => {
 
     // esto no funciona
     
-    let productos = stockProductos.find((producto) => 
+    let productos = ArrayLocalStorage.find((producto) => 
       producto.id === productoId);   
-   
+
 
     productosCarro.push(productos);
-    //LocalStorage.setItem('InfoCarro', JSON.stringify(productosCarro));
-    //cartContainter.textContent = ``
-
+    
+    localStorage.setItem("productosCarro",JSON.stringify(productosCarro))
+      
+    
+    CarroLocal=JSON.parse(localStorage.getItem("productosCarro"))
+    //localStorage.setItem("productosCarro",JSON.stringify([]))
+    
+    
     ///oscar preguntar
 
-    const carroFuncional = [...new Set(productosCarro)];
-    console.log(carroFuncional);
-   
-    carroFuncional.forEach((item) => {
-      console.log(item);
+    //const carroFuncional = [...new Set(CarroLocal)];
+    
+  
+    CarroLocal.forEach((item) => {
+      
+      
+/* 
+      const MiItem = carroFuncional.filter((ItemProductos) =>{
+        return ItemProductos.id===parseInt(item)
 
+     
+
+      const Unidades = CarroLocal.reduce((cantidad,id)=>{
+        return id===item ? cantidad+=1: cantidad},0);
+      
+      })
+       */
 /*     const buscar = productosCarro.filter((itemcarrito) => {
-        return itemcarrito === parseInst(item);
+        return itemcarrito === parseInt(item);
       }); */
       /*   const ItemUnidades = productosCarro.reduce((cantidad, productoId) => {
         return productoId === item ? (cantidad += 1) : cantidad;
       }, 0);
  */
+
+
       let lista = document.createElement(`div`);
       lista.classList.add("row");
       //lista.setAttribute("id", productoId)
@@ -72,11 +92,11 @@ const cart = (productoId) => {
       lista.appendChild(colCantidad);
 
       let colEliminar = document.createElement(`div`);
-      colEliminar.classList.add("col-3");
+      colEliminar.classList.add("col-3")
       colEliminar.innerHTML = `<button class="btn btn-danger btn-sm" id="${item.id}">Eliminar</button>`;
       lista.appendChild(colEliminar);
 
-      console.log(lista.childNodes);
+      
       cartContainter.appendChild(lista);
 
       colEliminar.addEventListener(`click`, deleteProducto);
@@ -86,21 +106,21 @@ const cart = (productoId) => {
   
 };
 
-function deleteProducto(e) {
-  console.log(e.target);
-  ProductoELiminar = productosCarro.indexOf((elementoDelArray) => {
+function deleteProducto(e) {  
+  console.log(CarroLocal)
+  ProductoELiminar = CarroLocal.indexOf((elementoDelArray) => {
     elementoDelArray.id === e.target.id;
   });
 
-  productosCarro.splice(ProductoELiminar, 1);
-
-  console.log(e.target.offsetParent);
-  console.log(e.target.parentElement);
-  //  console.log(productosCarro)
+  CarroLocal.splice(ProductoELiminar, 1);
 
   //PREGUNTAR A OSCAR, POR QUE DA
   let btnClicked = e.target.parentElement.parentElement;
-  console.log(btnClicked);
   btnClicked.remove();
-  MostrarProductosENCarrito();
+
+  localStorage.setItem("productosCarro",JSON.stringify(CarroLocal))
+  
+  MostrarProductosENCarrito()  
 }
+
+
