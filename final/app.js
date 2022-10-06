@@ -141,7 +141,11 @@ const mostrarProductos = (ArrayLocalStorage) => {
     const button = document.getElementById(`button${producto.id}`);
     button.addEventListener("click", () => {
       cart(`${producto.id}`);
-      alert(`Agregaste ${producto.nombre}`);
+      //alert(`Agregaste ${producto.nombre}`);
+      Swal.fire(`Agregado ${producto.nombre}!`)
+
+
+
     });
   });
 };
