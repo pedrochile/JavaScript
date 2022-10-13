@@ -1,9 +1,9 @@
-const cartContainter = document.querySelector(`#listado`);
+const cartContainter = document.querySelector(`#listado`); 
 
-let productosCarro = JSON.parse(localStorage.getItem("productosCarro")) || [];
+let productosCarro = JSON.parse(localStorage.getItem("productosCarro")) || []; //obtengo los valores de localStorage de mi carro
 
 let carritoLocalStorage = (productosCarro) => {
-  if(productosCarro.length > 0){
+  if(productosCarro.length > 0){  //si mi carro tiene mas de 1 elemento se mostrara si no, no hara nada
     productosCarro.forEach((item) => {
       let lista = document.createElement(`div`);
       lista.classList.add("row");
@@ -36,7 +36,7 @@ let carritoLocalStorage = (productosCarro) => {
     });
   } 
 }
-carritoLocalStorage(productosCarro);
+carritoLocalStorage(productosCarro); 
 let cart = (productoId) => {
   const MostrarProductosENCarrito = () => {
     cartContainter.textContent = "";
@@ -47,10 +47,10 @@ let cart = (productoId) => {
     );
     let inCart = productosCarro.find(producto => producto.id === productoId) //undefined o {}
     if(inCart){
-      inCart.cantidad--
-      localStorage.setItem("productosCarro", JSON.stringify(productosCarro));
+      inCart.cantidad++
+      localStorage.setItem("productosCarro", JSON.stringify(productosCarro));  //Si el p´roducto existe en el carro, le adiciono 1y cargo el localStorage
     } else {
-      productosCarro.push({...productos});
+      productosCarro.push({...productos});   //sino cargo el elemento desde 1 
       localStorage.setItem("productosCarro", JSON.stringify(productosCarro));
     }
 
@@ -107,3 +107,23 @@ function deleteProducto(e) {
 //   0
 // )
 //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
+
+
+//operacion para vaciar completamente el carrito, revisar
+
+/* console.log("aunn no se daña ")
+  const eliminarTodo=document.querySelector(`#vaciarCarrito`)
+  console.log("tomo elemento")
+  eliminarTodo.addEventListener(`click`,eliminarTodo)
+  
+  
+  function eliminarTodo(){
+  console.log("eliminartodoclicked")
+  carritoLocalStorage = []
+  productosCarro =[]
+  localStorage.setItem ("productosCarro", JSON.stringify([]))
+
+  }
+ */
+
