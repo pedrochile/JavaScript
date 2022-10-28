@@ -1,0 +1,90 @@
+[{
+"id":"1",
+"nombre":"Alcohol Litro",
+"Marca":"Difem",
+"descripcion":"Alcohol 70%",
+"img": "img/alcoholLitro.jpg",
+"stock":1,
+"precio":500
+},{
+
+"id":"2",
+"nombre":"Bolsa de basura 80x70",
+"Marca":"Virutex",
+"descripcion":"Bolsa de basura biodegradable",
+"img":"img/bolsa70x90.jpg",
+"stock":1,
+"precio":1000
+},{
+
+"id":"3",
+"nombre":"Escobillon",
+"Marca":"Virutex",
+"descripcion":"Escobillon Basico",
+"img":"img/escobillon.jpg",
+"stock":1,
+"precio":1500
+},{
+"id":"4",
+"nombre":"Papel Interfoliado ",
+"Marca":"Elite",
+"descripcion":"Toallas Interfoliadas",
+"img":"img/Interfoliada.jpg",
+"stock":1,
+"precio":600
+},{
+
+"id":"5",
+"nombre":"Limpiador 4L",
+"Marca":"Virutex",
+"descripcion":"Limpiador de pisos 4L",
+"img":"img/limpiador4L.jpg",
+"stock":1,
+"precio":800
+},{
+"id":"7",
+"nombre":"Mascarillas",
+"Marca":"China Transfer",
+"descripcion":"Mascarillas 3 pliegues",
+"img":"img/mascarillas.jpg",
+"stock":1,
+"precio":700
+},{
+"id":"8",
+"nombre":"Mister Musculo",
+"Marca":"Musculin",
+"descripcion":"Limpiador superficies",
+"img":"img/musculo.jpg",
+"stock": 1,
+"precio":800
+},{
+
+
+
+"id":"9",
+"nombre":"Papel Higienico",
+"Marca":"Tork",
+"descripcion":"papel Higienico 4 x 500",
+"img":"img/papelHigienico.jpg",
+"stock":1,
+"precio":400
+},{
+
+"id":"10",
+"nombre":"Papel Toalla",
+"Marca":"Ovella",
+"descripcion":"Papel Absorvente",
+"img":"img/papelToalla.jpg",
+"stock":1,
+"precio":900
+},{
+
+"id":"11",
+"nombre":"Trapero Doble",
+"Marca":"Virutex",
+"descripcion":"trapero Doble Ojal",
+"img":"img/trapero.jpg",
+"stock":1,
+"precio":450
+}
+]

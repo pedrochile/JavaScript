@@ -126,4 +126,13 @@ function deleteProducto(e) {
 
   }
  */
+/* 
+  const eliminarTodo = document.querySelector("#vaciarCarro")
+  eliminarTodo.addEventListener("click",()=>{
+    console.log("disteclick")
+    productosCarro=[]
+
+  })
+
+ */
 
