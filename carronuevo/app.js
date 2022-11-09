@@ -70,7 +70,7 @@ const agregarCarro = e =>{
     /*     console.log("fdcsafdsad") */
    /*  console.log("carro--->") */
     }
-   
+    Swal.fire("Agregaste un producto")
     e.stopPropagation()
 
 }
@@ -83,10 +83,12 @@ const addCarro = objeto =>{
         cantidad: 1
         
     }
+    
     /* console.log(producto) */
     if(carrito.hasOwnProperty(producto.id)){
         producto.cantidad = carrito[producto.id].cantidad+1
     }
+    
     carrito[producto.id] = {...producto}
 
 /*     console.log(carrito) */
@@ -106,7 +108,7 @@ const pintoElCarrito = () =>{
         tempCarrito.querySelector(`.btn-info`).dataset.id=producto.id
         tempCarrito.querySelector(`.btn-danger`).dataset.id=producto.id
 
-
+        
         const clone = tempCarrito.cloneNode(true)
         fragment.appendChild(clone)
         
@@ -175,11 +177,10 @@ const btnFuncional = e =>{
 }
 
 
-var doc = new jsPDF();
 
-function printDiv(items,
-  productos) {
 
+function printDiv(items,productos) {
+  
   let mywindow = window.open('', 'PRINT', 'height=650,width=900,top=100,left=150');
 
   mywindow.document.write(`<html><head><title>>Productos entregados</title>`);
